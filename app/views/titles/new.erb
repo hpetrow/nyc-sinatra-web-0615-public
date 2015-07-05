@@ -1,0 +1,16 @@
+<h1>New Title</h1>
+
+<!-- form goes here -->
+<form action="/titles" method="POST">
+  Name:<br>
+  <input type = "text" name = "title[name]"><br>
+  <br>
+  Figures:<br>
+  <% @figures.each do |figure| %>
+    <input type = "checkbox" name = "title[figure_ids][]" value = "<%=figure.id%>"><%=figure.name%><br>
+  <% end %>
+  Other (separated by commas): <input type = "text" name = "title[add_figures_by_name]"><br>
+  <br>
+  <br>
+  <input type = "submit" value="Submit"><br>
+</form>

@@ -1,0 +1,19 @@
+<h1>Titles</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+  <% @titles.each do |title| %>
+  <tr>
+    <td><%= title.name %></td>
+    <td><a href= "/titles/<%=title.id%>">Show</a></td>
+    <td><a href= "/titles/<%=title.id%>/edit">Edit</a></td>
+  </tr>
+  <% end %>
+</table>
+<br>
+<small><a href = "/titles/new">New Title</a></small><br>
+<small><a href = "/">Home</a></small><br>
+<small><a href = "/landmarks">Landmarks</a></small><br>
+<small><a href = "/figures">Figures</a></small>

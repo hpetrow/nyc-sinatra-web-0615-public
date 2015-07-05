@@ -1,0 +1,21 @@
+<h1>Edit Title</h1>
+
+<!-- form goes here -->
+<form action="/titles/<%=@title.id%>" method="POST">
+  <input type="hidden" name="_method" value="patch">
+  Name:<br>
+  <input type = "text" value = <%=@title.name%> name = "title[name]"><br>
+  <br>
+  Figures:<br>
+  <% @figures.each do |figure| %>
+    <%if @title.figures.include?(figure)%>
+      <input type = "checkbox" name = "title[figure_ids][]" value = "<%=figure.id%>" checked><%=figure.name%><br>
+    <%else%>
+      <input type = "checkbox" name = "title[figure_ids][]" value = "<%=figure.id%>"><%=figure.name%><br>
+    <%end%>
+  <% end %>
+  Other (separated by commas): <input type = "text" name = "title[add_figures_by_name]"><br>
+  <br>
+  <br>
+  <input type = "submit" value="Submit"><br>
+</form>

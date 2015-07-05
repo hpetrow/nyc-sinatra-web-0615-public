@@ -1,10 +1,14 @@
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Year Completed</th>
-  </tr>
-  <tr>
-    <td><%= @landmark.name %></td>
-    <td><%= @landmark.year_completed %></td>
-  </tr>
-<table>
+<h1>Name: <%= @landmark.name %></h1>
+
+<ul>
+  <li>Year Completed: <%= @landmark.year_completed %> </li>
+  <% if @landmark.figure != nil %>
+    <li>Figure: <a href = "/figures/<%= @landmark.figure.id %>"><%= @landmark.figure.name %></a> </li>
+  <% end %>
+</ul>
+
+<small><a href = "/landmarks/<%=@landmark.id%>/edit">Edit</a></small>
+<small><a href = "/">Home</a></small><br>
+<small><a href = "/landmarks">Landmarks</a></small><br>
+<small><a href = "/figures">Figures</a></small><br>
+<small><a href = "/titles">Titles</a></small>
